@@ -19,6 +19,8 @@ from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('djangoapp/', include('djangoapp.urls')),
@@ -27,4 +29,13 @@ urlpatterns = [
     path('contact/', TemplateView.as_view(template_name="Contact.html")),
     path('login/', TemplateView.as_view(template_name="index.html")),
     path('register/', TemplateView.as_view(template_name="index.html")),
+    path('logout/', TemplateView.as_view(template_name="index.html")),
+    # path('profile/', TemplateView.as_view(template_name="index.html")),
+    # path('reset_password/', TemplateView.as_view(template_name="index.html")),
+    # path('reset_password_sent/', TemplateView.as_view(template_name="index.html")),
+    # path('reset_password_confirm/', TemplateView.as_view(template_name="index.html")),
+    # path('reset_password_complete/', TemplateView.as_view(template_name="index.html")),
+    # path('password_change/', TemplateView.as_view(template_name="index.html")),
+    # path('password_change_done/', TemplateView.as_view(template_name="index.html")),
+    # path('password_reset/', TemplateView.as_view(template_name="index.html")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
